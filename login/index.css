@@ -7,6 +7,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.1em;
+  color: rgb(46, 46, 46);
 }
 
 .wrapper {
@@ -44,10 +47,22 @@ h2 {
   padding: 0.5em;
 }
 
+.form-row > input:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .form-row > button {
-  padding: 0.75em 1em;
+  padding: 1em 1.25em;
   background: rgb(140, 139, 139);
   color: white;
   border: 0;
   border-radius: 3px;
+}
+
+.form-row > button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }

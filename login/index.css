@@ -3,7 +3,7 @@ body {
   width: 100vw;
   padding: 0;
   margin: 0;
-  background-color: #0c2d48;
+  background-image: linear-gradient(180deg, #0c2d48, #145da0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +27,7 @@ body {
 
 h2 {
   padding: 0em 0em 0.5em 0em;
+  /* text-decoration: underline; */
 }
 
 .form-row {
@@ -55,7 +56,7 @@ h2 {
 
 .form-row > button {
   padding: 1em 1.25em;
-  background: rgb(140, 139, 139);
+  background: rgb(118, 118, 118);
   color: white;
   border: 0;
   border-radius: 3px;

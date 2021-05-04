@@ -32,8 +32,16 @@ h2 {
   padding: 0em 0em 0.5em 0em;
 }
 
+.submitButton:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
 .form-row {
-  padding: 0.75em 2em 0.75em 2em;
+  padding: 0.5em 2em 0.5em 2em;
   display: flex;
   /* justify-content: center; */
   align-self: stretch;

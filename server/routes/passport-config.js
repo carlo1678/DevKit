@@ -13,26 +13,6 @@ function initialize(passport) {
       return done(null, user);
     });
     
-
-    // const user = await User.FindOne({
-    //   where: req.body
-    // })
-    // // if the user in not in the db, error out
-    // if (user == null) {
-    //   return done(null, false, { message: "No user with that username" });
-    // }
-    // try {
-    //   if (await bcrypt.compare(password, user.Password)) {
-    //     return done(null, user)
-    //   } else {
-    //       return done(null, false, {
-    //         message: "Password does not match in our db"
-    //       })
-    //   }
-    // } catch (error) {
-    //   console.error(error)
-    //   return done(error)
-    // }
   };
   passport.use(new localStrategy(authenticateUser));
   // this logs you in as a user and creates a session

@@ -32,8 +32,9 @@ app.engine("html", es6Renderer);
 app.set("views", "../views");
 app.set("view engine", "html");
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.static("../public"));
 
+app.use(express.urlencoded({ extended: false }));
 
 
 // CUSTOM MIDDLEWARE
@@ -62,9 +63,12 @@ app.get("/login", checkIfUserIsLoggedIn,(req,res) => {
 
 // app.post("/login", passport.authenticate("local"));
 app.post("/login", 
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { 
+    successRedirect: '/',
+    failureRedirect: '/login' 
+  }),
   function(req, res) {
-    res.redirect('/');
+    res.json();
 });
 
 app.get("/register", checkIfUserIsLoggedIn,(req,res) => {

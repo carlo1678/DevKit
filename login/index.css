@@ -9,8 +9,8 @@ body {
   align-items: center;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
-  font-weight: 600;
+  font-size: 1.35em;
+  font-weight: 700;
   color: rgb(46, 46, 46);
 }
 
@@ -23,8 +23,8 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 0;
-  height: 22em;
-  width: 18em;
+  height: 27em;
+  width: 22em;
   box-shadow: 8px 8px 15px rgb(53, 53, 53);
 }
 
@@ -56,9 +56,10 @@ a {
 
 .form-row > input {
   flex: 2;
-  padding: 0.5em;
+  padding: 1em;
   border-radius: 8px;
   border: 1.5px solid rgb(186, 186, 186);
+  font-size: 0.6em;
 }
 
 .form-row > input:hover {
@@ -72,11 +73,12 @@ a {
 }
 
 .form-row > button {
-  padding: 1em 1.25em;
+  padding: 1.25em 2.25em;
   background: rgb(118, 118, 118);
   color: white;
   border: 0;
   border-radius: 8px;
+  font-size: 0.6em;
 }
 
 .form-row > button:hover {

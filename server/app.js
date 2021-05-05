@@ -34,7 +34,9 @@ app.set("view engine", "html");
 
 app.use(express.urlencoded({ extended: false }));
 
-
+//* Static Folders
+app.use(express.static("../public"));
+app.use(express.static("../assets"));
 
 // CUSTOM MIDDLEWARE
 function checkAuthenticated(req,res,next) {
@@ -52,20 +54,19 @@ function checkIfUserIsLoggedIn(req,res,next) {
   next()
 }
 
-app.get("/", checkAuthenticated,(req,res) => {
-  res.render("home");
+app.get("/", (req,res) => {
+  res.render("home-page");
 });
 
 app.get("/login", checkIfUserIsLoggedIn,(req,res) => {
   res.render("login");
 });
 
-// app.post("/login", passport.authenticate("local"));
 app.post("/login", 
   passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-});
+  (req,res) => {
+    res.redirect("/");
+  });
 
 app.get("/register", checkIfUserIsLoggedIn,(req,res) => {
   res.render("register");
@@ -76,7 +77,6 @@ app.post("/register", async (req,res) => {
   try {
     const salt = await bcrypt.genSalt();
     const Password = await bcrypt.hash(req.body.Password, salt);
-    console.log(Password)
     const { UserName,FirstName,LastName,DOB,Address,Email } = req.body;
     const newUser = await User.create({
       UserName,
@@ -86,13 +86,9 @@ app.post("/register", async (req,res) => {
       DOB,
       Address,
       Email
-    })
-    console.log(newUser)
-    // res.json({
-    //   id: newUser.id
-    // })
+    });
 
-    // res.status(200).redirect("/login");
+    res.status(200).redirect("/login");
   } catch (error) {
     res.status(401).redirect("/register")
   }
@@ -101,6 +97,10 @@ app.post("/register", async (req,res) => {
 app.post("/logout", (req,res) => {
   req.logOut();
   res.redirect("/login");
+})
+
+app.get("/note", (req,res) => {
+  res.render("notes-page");
 })
 
 

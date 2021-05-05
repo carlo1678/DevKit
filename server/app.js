@@ -15,6 +15,7 @@ const es6Renderer = require("express-es6-template-engine");
 const PORT = 3033;
 
 //* Middleware
+// comment
 app.use(cors());
 app.use(express.json())
 app.use(flash());

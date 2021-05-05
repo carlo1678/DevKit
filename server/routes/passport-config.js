@@ -6,12 +6,23 @@ function initialize(passport) {
   
   const authenticateUser = async (username, password, done) => {
 
-    User.findOne({ username: username }, function (err, user) {
-      if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-      if (!user.verifyPassword(password)) { return done(null, false); }
-      return done(null, user);
-    });
+    try {
+      const user = await User.findOne( {where: { UserName: username }})
+      if (user == null) {
+        return done(null, false);
+      }
+      
+      if (await bcrypt.compare(password, user.Password)) {
+        return done(null, user)
+      } else {
+          return done(null, false, {
+            message: "Password does not match in our db"
+          })
+      }
+    } catch (error) {
+      console.error(error)
+      return done(error)
+    }
     
   };
   passport.use(new localStrategy(authenticateUser));

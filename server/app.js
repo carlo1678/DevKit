@@ -9,8 +9,9 @@ const initializePassport = require("./routes/passport-config");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
-const { User } = require("./models");
+const { User, Note, Card } = require("./models");
 const es6Renderer = require("express-es6-template-engine");
+const featureRoutes = require("./routes/features")
 
 const PORT = 3033;
 
@@ -34,6 +35,7 @@ app.set("views", "../views");
 app.set("view engine", "html");
 
 app.use(express.static("../public"));
+app.use(express.static("../assets"));
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -55,7 +57,18 @@ function checkIfUserIsLoggedIn(req,res,next) {
 }
 
 app.get("/", (req,res) => {
-  res.render("home-page");
+  if (req.isAuthenticated()) {
+    res.render("home-page", {locals: {
+      button: "Logout",
+      route: "/logout"
+    }})
+  } else {
+    res.render("home-page", {locals: {
+      button: "Login",
+      route: "/login"
+    }});
+  }
+
 });
 
 app.get("/login", checkIfUserIsLoggedIn,(req,res) => {
@@ -97,15 +110,38 @@ app.post("/register", async (req,res) => {
   }
 });
 
-app.post("/logout", (req,res) => {
+app.get("/logout", (req,res) => {
   req.logOut();
   res.redirect("/login");
 })
 
-app.get("/note", (req,res) => {
+app.get("/note", checkAuthenticated, (req,res) => {
   res.render("notes-page");
 })
 
+app.post("/note", async (req,res) => {
+
+  const UserId = req.user
+  console.log(UserId)
+  // const { Title, Text} = req.body;
+  // const newNote = await Note.create({
+  //   Title,
+  //   Text,
+  //   UserId
+  // })
+})
+
+app.get("/card", checkAuthenticated, (req,res) => {
+  res.render("cards-page");
+})
+
+app.post("/card", async (req,res) => {
+  const { Question, Answer } = req.body;
+  const newCard = await Card.create({
+    Question,
+    Answer
+  })
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

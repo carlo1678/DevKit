@@ -18,9 +18,9 @@ function initialize(passport) {
   // this logs you in as a user and creates a session
   passport.serializeUser((user, done) => done(null, user.id));
   // this unlogs that session
-  passport.deserializeUser((id, done) => {
-    return done(null, userId(id));
-  })
+  passport.deserializeUser(function(user, done) { 
+    done(null, user); 
+});
 }
 
 module.exports = initialize;

@@ -64,16 +64,14 @@ app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
   res.render("login");
 });
 
-app.post(
-  "/login",
-  passport.authenticate('local', {
+app.post("/login", 
+  passport.authenticate('local', { 
     successRedirect: '/',
-    failureRedirect: '/login'
+    failureRedirect: '/login' 
   }),
-  function (req, res) {
+  function(req, res) {
     res.json();
-  }
-);
+});
 
 app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
   res.render("register");

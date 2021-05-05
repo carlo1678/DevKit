@@ -6,22 +6,13 @@ function initialize(passport) {
   
   const authenticateUser = async (username, password, done) => {
 
-    try {
-      const user = await User.findOne( {where: { UserName: username }})
-      if (user == null) {
-        return done(null, false);
-      }
-
-      if (await bcrypt.compare(password, user.Password)) {
-        return done(null, user)
-      } else {
-        return done(null, false)
-      }
-
-      
-    } catch (err) {
-      console.error(err);
-    }
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.verifyPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
+    
   };
   passport.use(new localStrategy(authenticateUser));
   // this logs you in as a user and creates a session

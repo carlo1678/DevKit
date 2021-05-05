@@ -103,6 +103,9 @@ app.get("/note", (req,res) => {
   res.render("notes-page");
 })
 
+app.get("/cards", (req,res) => {
+  res.render("flash-cards-page");
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

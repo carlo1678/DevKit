@@ -163,6 +163,12 @@ body {
   box-shadow: 3px 4px 5px rgb(87, 87, 87);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .note-input {
+    width: 11em;
+  }
+}
+
 .note-description {
   padding: 14px;
   margin: 10px 0px 10px 0px;
@@ -176,6 +182,12 @@ body {
 
 .note-description:hover {
   box-shadow: 3px 4px 5px rgb(87, 87, 87);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .note-description {
+    width: 11em;
+  }
 }
 
 .note-button {

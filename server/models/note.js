@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Note.init({
     Title: DataTypes.STRING,
+    Text: DataTypes.TEXT,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,

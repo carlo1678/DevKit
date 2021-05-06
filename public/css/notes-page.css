@@ -1,9 +1,25 @@
 body {
   padding-bottom: 20px;
+  background-color: rgb(230, 226, 226);
 }
 
 button {
   margin-right: 10px;
+  padding: 4px 10px;
+}
+
+.login-button {
+  border-radius: 16px;
+  border: 0.5px solid rgb(46, 46, 46);
+}
+
+.login-button:hover {
+  box-shadow: 2px 3px 4px rgb(87, 87, 87);
+}
+
+.login-button:active {
+  box-shadow: 1px 2px 3px rgb(56, 57, 58);
+  border: none;
 }
 
 .nav-link1 {
@@ -97,19 +113,24 @@ button {
 
 body {
   font-size: 30px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: rgb(46, 46, 46);
 }
 .title {
-  text-decoration: underline;
-  /* padding: 15px 0px 15px 0px; */
+  font-weight: 900;
+
+  /* padding: 15px 0px 15px 0px;*/
+  color: rgb(46, 46, 46);
 }
 .main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: rgb(230, 226, 226);
+  margin-top: 15px;
 }
 .card {
   display: flex;
@@ -121,7 +142,7 @@ body {
   padding: 100px 100px 100px 100px;
   margin: 0px 200px 0px 200px;
   border-radius: 5px;
-  box-shadow: 6px 7px 3px rgb(162, 165, 169);
+  box-shadow: 4px 5px 6px rgb(162, 165, 169);
   overflow: auto;
 }
 .note-label {
@@ -138,7 +159,7 @@ body {
   font-size: 20px;
 }
 .note-input:hover {
-  box-shadow: 3px 4px 5px rgb(110, 112, 114);
+  box-shadow: 3px 4px 5px rgb(87, 87, 87);
 }
 
 .note-description {
@@ -153,7 +174,7 @@ body {
 }
 
 .note-description:hover {
-  box-shadow: 3px 4px 5px rgb(110, 112, 114);
+  box-shadow: 3px 4px 5px rgb(87, 87, 87);
 }
 
 .note-button {
@@ -163,15 +184,14 @@ body {
   font-size: 20px;
   border: white;
   border-radius: 22px;
+  border: 0.5px solid rgb(46, 46, 46);
 }
 .note-button:hover {
-  box-shadow: 3px 4px 3px rgb(110, 112, 114);
+  box-shadow: 3px 4px 3px rgb(87, 87, 87);
 }
-.note-button:focus {
-  outline: 0;
-}
+
 .note-button:active {
-  box-shadow: 1px 2px 3px rgb(84, 85, 87);
+  box-shadow: 1px 2px 3px rgb(56, 57, 58);
   border: none;
 }
 
@@ -181,8 +201,66 @@ hr {
   margin-left: auto;
 }
 
-.notes-container {
+/* .notes-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+} */
+
+.note-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px 15px 15px;
+  margin: 15px 15px 15px 15px;
+  background-color: silver;
+  font-size: 20px;
+  height: 300px;
+  width: 300px;
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 3px 4px 5px rgb(110, 112, 114);
+}
+
+.note {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  word-break: break-all;
+}
+
+.note-heading {
+  margin-top: 12px;
+}
+
+.note-ul {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-li {
+  list-style-type: none;
+}
+
+.notecard-btn {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 18px;
+  border: 0.5px solid rgb(46, 46, 46);
+}
+
+.notecard-btn:hover {
+  box-shadow: 3px 4px 3px rgb(110, 112, 114);
+}
+
+.notecard-btn:active {
+  box-shadow: 1px 2px 3px rgb(84, 85, 87);
+  border: none;
 }

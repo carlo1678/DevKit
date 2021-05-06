@@ -189,11 +189,14 @@ body {
   padding: 14px;
   margin: 10px 0px 10px 0px;
   width: 400px;
-  height: 400px;
+  /* height: 400px; */
+  max-height: 400px;
+  min-height: 275px;
   border-radius: 22px;
   border: none;
   outline: none;
   font-size: 20px;
+  /* resize: none; */
 }
 
 .note-description:hover {

@@ -19,13 +19,13 @@ function slideOut(){
         $('#importExport').animate({'left':'-610px'},500);
     };
 const card1 = new Card(
-  "Question 1",
-  "Answer 1",
+  "What does CRUD stand for?",
+  "Create, Read, Update, Delete",
   "General"
 );
 const card2 = new Card(
-  "Question 2",
-  "Answer 2",
+  "How do you print to the console in JavaScript?",
+  "console.log()",
   "General"
 );
 

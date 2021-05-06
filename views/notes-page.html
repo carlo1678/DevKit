@@ -96,36 +96,56 @@
       // createNoteList.append(noteList)
 
       //CREATE NOTES
-      const addNote = () => {
+      const notesFunction = () => {
+        const noteWrapper = document.createElement("div")
+        noteWrapper.className = "note-wrapper"
         const makeNoteCard = document.createElement("div")
         makeNoteCard.className = "note-card"
         const makeCard = document.createElement("div")
         makeCard.className = "note"
-        const noteContainer = document.querySelector(".main-container")
+        // const noteContainer = document.querySelector(".note-wrapper")
+        const mainContainer = document.querySelector(".main-container")
         // const noteCard = document.querySelector(".note-card")
         // const card = document.querySelector(".note")
-        const noteItem = document.createElement("p")
-        noteItem.className = "note-item"
+        const noteItem = document.createElement("ul")
+        noteItem.className = "note-ul"
+        const noteHeading = document.createElement("h5")
+        noteHeading.className = "note-heading"
+        const noteLi = document.createElement("li")
+        noteLi.className = "note-li"
+        const noteCardBtn = document.createElement("button")
+        noteCardBtn.className = "notecard-btn"
+        noteCardBtn.innerHTML = "Flash Card"
         const noteInputed = document.querySelector(".note-input").value
-        noteItem.innerHTML = noteInputed
+        noteHeading.innerHTML = noteInputed
         const notesDescription = document.querySelector(".note-description").value
-        noteItem.innerHTML += notesDescription
+        noteLi.innerHTML += notesDescription
+        noteItem.append(noteHeading, noteLi, noteCardBtn)
         makeCard.append(noteItem)
         makeNoteCard.append(makeCard)
-        noteContainer.append(makeNoteCard)
+        mainContainer.append(makeNoteCard)
+        // mainContainer.append(noteWrapper)
       }
 
-      // function addNote() {
-      //   const grabTask = document.querySelector(".list-of-notes")
-      //   const newNote = document.createElement("li")
-      //   const noteInputed = document.querySelector(".note-input").value
-      //   newNote.innerHTML = noteInputed
-      //   grabTask.append(newNote)
+      // const addNote = () => {
+      //      notesFunction()
+      //   // const grabTask = document.querySelector(".list-of-notes")
+      //   // const newNote = document.createElement("li")
+      //   // const noteInputed = document.querySelector(".note-input").value
+      //   // newNote.innerHTML = noteInputed
+      //   // grabTask.append(newNote)
+      //      const grabTask = document.querySelector(".note-ul")
+      //      noteHeading.innerHTML = noteInputed
+      //      noteLi.innerHTML = notesDescription 
+      //      grabTask.append(noteHeading, noteLi, noteCardBtn)
+      //      makeCard.append(grabTask)
+      //      makeNoteCard.append(makeCard)
+      //      noteContainer.append(makeNoteCard)
       // }
       const onClick = document.querySelector(".note-button")
       onClick.addEventListener("click", (event) => {
         console.log("works")
-        addNote()
+        notesFunction()
         return
       })
     </script>

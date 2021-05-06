@@ -24,7 +24,7 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false
   })
 );
 
@@ -118,19 +118,19 @@ app.get("/logout", (req,res) => {
 });
 
 app.get("/note", checkAuthenticated, (req,res) => {
-  res.render("notes-page");
+  res.render("notes-page", {locals: {
+    userid: req.user
+  }});
 })
 
-app.post("/note", async (req,res) => {
-
-  const UserId = req.user
-  console.log(UserId)
-  // const { Title, Text} = req.body;
-  // const newNote = await Note.create({
-  //   Title,
-  //   Text,
-  //   UserId
-  // })
+app.post("/note", checkAuthenticated, async (req,res) => {
+  
+  const { Title, Text} = req.body;
+  const newNote = await Note.create({
+    Title,
+    Text,
+    UserId
+  })
 })
 
 app.get("/card", checkAuthenticated, (req,res) => {

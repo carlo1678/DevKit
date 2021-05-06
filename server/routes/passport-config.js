@@ -31,7 +31,7 @@ function initialize(passport) {
   // this unlogs that session
   passport.deserializeUser(function(user, done) { 
     done(null, user); 
-});
+  });
 }
 
 module.exports = initialize;

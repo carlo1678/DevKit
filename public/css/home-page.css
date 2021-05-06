@@ -114,9 +114,16 @@ a {
   color: #3366cc;
   text-decoration: none;
 }
-.footer-links {
-  padding-left: 0;
-  list-style: none;
+.contributors {
+padding-left: 17px;
+}
+
+li {
+  color: gray;
+}
+.list-items {
+  color: gray;
+  font-size: 25px;
 }
 .footer-links li {
   display: block;

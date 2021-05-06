@@ -41,13 +41,13 @@
 
       </div>
       <hr>
-      <div class="notes-container">
+      <!-- <div class="notes-container">
         <div class="note-card">
           <div class="note">
 
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
@@ -67,11 +67,15 @@
       //NOTE TITLE 
       const noteInput = document.createElement("input")
       noteInput.className = "note-input"
+      noteInput.placeholder = "Note Title..."
+      // noteInput.onfocus = "this.value=''"
       const createInput = document.querySelector(".card")
       createInput.append(noteInput)
       //NOTE DESCRIPTION
       const noteDescription = document.createElement("textarea")
       noteDescription.className = "note-description"
+      noteDescription.placeholder = "Note Description..."
+      // noteDescription.onfocus = "this.value=''"
       const createDescription = document.querySelector(".card")
       createDescription.append(noteDescription)
       //CREATE BUTTON
@@ -93,18 +97,22 @@
 
       //CREATE NOTES
       const addNote = () => {
-        const noteContainer = document.querySelector(".notes-container")
-        const noteCard = document.querySelector(".note-card")
-        const card = document.querySelector(".note")
+        const makeNoteCard = document.createElement("div")
+        makeNoteCard.className = "note-card"
+        const makeCard = document.createElement("div")
+        makeCard.className = "note"
+        const noteContainer = document.querySelector(".main-container")
+        // const noteCard = document.querySelector(".note-card")
+        // const card = document.querySelector(".note")
         const noteItem = document.createElement("p")
         noteItem.className = "note-item"
         const noteInputed = document.querySelector(".note-input").value
         noteItem.innerHTML = noteInputed
         const notesDescription = document.querySelector(".note-description").value
         noteItem.innerHTML += notesDescription
-        card.append(noteItem)
-        noteCard.append(card)
-        noteContainer.append(noteCard)
+        makeCard.append(noteItem)
+        makeNoteCard.append(makeCard)
+        noteContainer.append(makeNoteCard)
       }
 
       // function addNote() {
@@ -115,9 +123,10 @@
       //   grabTask.append(newNote)
       // }
       const onClick = document.querySelector(".note-button")
-      onClick.addEventListener("click", () => {
+      onClick.addEventListener("click", (event) => {
         console.log("works")
         addNote()
+        return
       })
     </script>
 </body>

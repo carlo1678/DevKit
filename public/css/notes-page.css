@@ -109,6 +109,13 @@ button {
   }
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* //tate's code // */
 
 body {
@@ -146,6 +153,15 @@ body {
   box-shadow: 4px 5px 6px rgb(162, 165, 169);
   overflow: auto;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card {
+    margin: 0px 50px 0px 50px;
+    width: 11em;
+    height: 18em;
+  }
+}
+
 .note-label {
   padding: 5px 0px 5px 0px;
   margin: 5px 0px 5px 0px;
@@ -163,19 +179,34 @@ body {
   box-shadow: 3px 4px 5px rgb(87, 87, 87);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .note-input {
+    width: 14em;
+  }
+}
+
 .note-description {
   padding: 14px;
   margin: 10px 0px 10px 0px;
   width: 400px;
-  height: 400px;
+  /* height: 400px; */
+  max-height: 400px;
+  min-height: 275px;
   border-radius: 22px;
   border: none;
   outline: none;
   font-size: 20px;
+  /* resize: none; */
 }
 
 .note-description:hover {
   box-shadow: 3px 4px 5px rgb(87, 87, 87);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .note-description {
+    width: 14em;
+  }
 }
 
 .note-button {

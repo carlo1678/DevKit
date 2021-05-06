@@ -28,6 +28,12 @@ body {
   box-shadow: 8px 8px 15px rgb(53, 53, 53);
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    width: 14em;
+  }
+}
+
 h2 {
   padding: 0em 0em 0.5em 0em;
 }

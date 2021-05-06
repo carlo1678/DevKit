@@ -109,6 +109,13 @@ button {
   }
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* //tate's code // */
 
 body {
@@ -146,6 +153,15 @@ body {
   box-shadow: 4px 5px 6px rgb(162, 165, 169);
   overflow: auto;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card {
+    margin: 0px 50px 0px 50px;
+    width: 11em;
+    height: 18em;
+  }
+}
+
 .note-label {
   padding: 5px 0px 5px 0px;
   margin: 5px 0px 5px 0px;
@@ -165,7 +181,7 @@ body {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .note-input {
-    width: 11em;
+    width: 14em;
   }
 }
 
@@ -186,7 +202,7 @@ body {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .note-description {
-    width: 11em;
+    width: 14em;
   }
 }
 

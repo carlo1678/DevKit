@@ -1,6 +1,6 @@
-< DevKit/>
+<DevKit/>
 
-The idea behind Devkit was to create a "Quizlet" like Web page, an environment to help developers study key concepts and create flash cards. Some of the features include the user's ability to create flashcards, register and login, create an account, and create a study set. The user also has the option to save their work before logging out and that information will be recorded in our database. Devkit consists in five different pages, a home page with a greeting message, a user login page, a flash cards page, notes, view all notes, which helps optimize the user’s study time with a smooth transition between pages.
+The idea behind Devkit was to create a "Quizlet" like Web page, an environment to help developers study key concepts and create notes, that also include flashcard sets. Some of the features include the user's ability to create an account, register and login, and create notes (and a flashcard set, corresponding to each note). We tried to make the studying process as simple as possible with all the tools we incorporated into DevKit. DevKit consists of five different pages, a home page with a greeting message and some basic information, a user login page, notes, view all notes, and then you can view flashcards associated with each note. 
 
 HOME PAGE
 
